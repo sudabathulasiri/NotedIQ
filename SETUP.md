@@ -1,9 +1,9 @@
-# DualSpace — Setup Guide
+# NotedIQ — Setup Guide
 
 ## Final Project Structure
 
 ```
-DUALSPACE/
+NOTEDIQ/
 ├── .gitignore
 ├── SETUP.md
 │

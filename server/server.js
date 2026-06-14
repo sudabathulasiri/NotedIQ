@@ -1,5 +1,5 @@
 /**
- * DualSpace — server.js
+ * NotedIQ — server.js
  * Express + Socket.io + MongoDB
  * PORT: 5000
  */
@@ -34,7 +34,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // ── MongoDB ───────────────────────────────────────────────────────────────────
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/dualspace";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/notediq";
 
 let mongoConnected = false;
 mongoose.connect(MONGO_URI)
@@ -65,7 +65,7 @@ const inMemoryUsers = new Map(); // email -> { name, email, password, resetPassw
 const inMemorySessions = new Map();
 
 // ── REST ──────────────────────────────────────────────────────────────────────
-app.get("/", (_, res) => res.json({ status: "DualSpace API running", port: PORT }));
+app.get("/", (_, res) => res.json({ status: "NotedIQ API running", port: PORT }));
 
 // Normalize email addresses to handle common typos like gmmail.com
 function normalizeEmail(email) {
@@ -710,4 +710,4 @@ io.on("connection", (socket) => {
 });
 
 // ── Start ─────────────────────────────────────────────────────────────────────
-server.listen(PORT, () => console.log(`🚀 DualSpace server → http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`🚀 NotedIQ server → http://localhost:${PORT}`));

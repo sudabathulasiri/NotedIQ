@@ -1,6 +1,6 @@
 # NotedIQ — Smart Study & Meeting Intelligence Layer
 
-NotedIQ (DualSpace) is a premium, dual-mode web application designed to turn raw notes, text, documents, files, and audio/video recordings into structured intelligence. It offers two specialized workspaces customized for different workflows:
+NotedIQ is a premium, dual-mode web application designed to turn raw notes, text, documents, files, and audio/video recordings into structured intelligence. It offers two specialized workspaces customized for different workflows:
 - 🎓 **Student Mode (Study Guide)**: Focused on parsing lectures, generating definitions, study guides, and visual flowcharts for base-case checks and academic notes.
 - 💼 **Corporate Mode (Meeting Minutes)**: Tailored for meetings, capturing key discussion points, highlights, task checklists, and action items.
 
@@ -74,7 +74,7 @@ Demonstration of the general note workspace layout, live processing engine statu
 Create a `.env` file in the `server` folder with the following variables:
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/dualspace
+MONGO_URI=mongodb://localhost:27017/notediq
 JWT_SECRET=your_jwt_secret_key
 GROQ_API_KEY=your_groq_api_key
 SMTP_USER=your_gmail_address
@@ -86,7 +86,7 @@ SMTP_PASS=your_gmail_app_password
 1. **Clone the repository**:
    ```bash
    git clone <repository_url>
-   cd DualSpace
+   cd NotedIQ
    ```
 
 2. **Setup Server**:
