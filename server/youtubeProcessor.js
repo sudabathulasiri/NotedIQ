@@ -41,10 +41,10 @@ async function getTranscript(youtubeUrl) {
       throw new Error("Transcript is empty. The video may not have captions enabled.");
     }
 
-    // Limit to ~3000 words to avoid token overflow
+    // Limit to ~40000 words to avoid token overflow (easily fits llama 128k context)
     const words = fullText.split(" ");
-    const truncated = words.slice(0, 3000).join(" ");
-    const wasTruncated = words.length > 3000;
+    const truncated = words.slice(0, 40000).join(" ");
+    const wasTruncated = words.length > 40000;
 
     return {
       videoId,

@@ -49,6 +49,10 @@ The JSON must follow this exact structure:
   "corrected": "A professionally written, cleaned-up version of the meeting notes",
   "blocks": [
     {
+      "type": "banner-title",
+      "content": "The meeting topic or subject (brief, e.g. Q3 Planning Sync)"
+    },
+    {
       "type": "decision",
       "content": "A formal decision or conclusion reached in the meeting"
     },
@@ -63,13 +67,13 @@ The JSON must follow this exact structure:
 }
 
 Rules:
+- The first block must always be a "banner-title" block summarizing the meeting topic/subject
 - Extract ALL decisions made in the meeting as "decision" blocks
 - Extract ALL action items / follow-ups as "task-item" blocks
 - For task-items, always include assignee (use full name + role from the notes), priority, and deadline
 - If no deadline is mentioned, infer a reasonable one (e.g. "by end of week")
 - If no assignee is clear, use "Team"
 - Priority: "high" if urgent/critical/blocker, "medium" if normal, "low" if nice-to-have
-- Always start with at least one "decision" block summarizing the meeting purpose
 - Be professional and concise — this is an official MoM document
 - Return ONLY the JSON object, nothing else
 `;
